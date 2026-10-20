@@ -21,7 +21,7 @@ public class PlayerPowerUps : MonoBehaviour
         
     }
 
-    // SPEED BOOST - allow player to click shift to speed up (Orange)
+    
     public void ActivateSpeedBoost(float duration)
     {
         StartCoroutine(SpeedBoostRoutine(duration));
@@ -39,8 +39,6 @@ public class PlayerPowerUps : MonoBehaviour
         SpeedBoostTimeRemaining = 0f;
         hasSpeedBoost = false;
     }
-
-    // SCORE BOOST - double the score pickup (Purple)
     public void ActivateScoreBoost(float duration)
     {
         StartCoroutine(ScoreBoostRoutine(duration));
@@ -67,8 +65,6 @@ public class PlayerPowerUps : MonoBehaviour
             ScoreManager.Instance.SetDoubleScore(false);
         }
     }
-
-    //JUMP BOOST - allow player to double jump (Blue)
     public void ActivateJumpBoost(float duration)
     {
         StartCoroutine(JumpBoostRoutine(duration));

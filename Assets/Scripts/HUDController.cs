@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro; // TMP_Text
- 
-// Updates the HUD every frame from the ScoreManager and PlayerPowerUps.
+
 public class HUDController : MonoBehaviour
 {
     [Header("Score")]
@@ -30,7 +29,6 @@ public class HUDController : MonoBehaviour
     
     private void UpdateScore()
     {
-        // The Score property from Lab 4: anyone can read it
         scoreText.text = "Score: " + ScoreManager.Instance.Score;
     }
     private void UpdateHealth()
@@ -45,7 +43,7 @@ public class HUDController : MonoBehaviour
     {
         if(playerPowerUps == null) return;
 
-        // Speed Boost timer
+        // speed boost timer
         if(speedBoostText != null)
         {
             if(playerPowerUps.hasSpeedBoost)
@@ -53,7 +51,7 @@ public class HUDController : MonoBehaviour
             else
                 speedBoostText.text = ""; //Hide text when inactive
         }
-        //Score Boost timer
+        //score boost timer
         if (scoreBoostText !=null)
         {
             if(playerPowerUps.hasScoreBoost)
@@ -62,7 +60,7 @@ public class HUDController : MonoBehaviour
                 scoreBoostText.text="";
         }
 
-        //jump Boost timer
+        //jump boostr timer
         if (jumpBoostText != null)
         {
             if(playerPowerUps.hasJumpBoost)

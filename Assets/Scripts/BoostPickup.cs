@@ -23,7 +23,7 @@ public class PickupItem : MonoBehaviour
         {
             TriggerPickupSound();
 
-            //handle Standard Score Pickup (Destroyed permanently)
+            //for score pickups (coins basically)
             if (type == PickupType.StandardScore)
             {
                 if (ScoreManager.Instance != null)
@@ -35,7 +35,7 @@ public class PickupItem : MonoBehaviour
                 return; 
             }
 
-            //handle Boost Power-Ups
+            //for booster ones
             PlayerPowerUps powerUps = other.GetComponentInParent<PlayerPowerUps>();
             if (powerUps != null)
             {
@@ -52,7 +52,7 @@ public class PickupItem : MonoBehaviour
                         break;
                 }
                 
-              // Disappear, disable collision, and call Reappear() after 30 seconds
+              //disappear, disable collision, and call Reappear() after 30 seconds
                 if (visuals != null) visuals.SetActive(false);
                 GetComponent<Collider>().enabled = false;
                 Invoke(nameof(Reappear), respawnDelay);
@@ -68,10 +68,9 @@ public class PickupItem : MonoBehaviour
 
     private void TriggerPickupSound()
     {
-        // Play if a sound clip was assigned in the Inspector[cite: 1]
+        //playing clip assigned at inspcectro
         if (pickupSound != null)
         {
-            // Plays the sound at the pickup's exact 3D position[cite: 1]
             AudioSource.PlayClipAtPoint(pickupSound, transform.position);
         }
     }

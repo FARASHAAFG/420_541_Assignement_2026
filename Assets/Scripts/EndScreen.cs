@@ -8,8 +8,6 @@ public class EndScreen : MonoBehaviour
  
     private void Start()
     {
-        // No ScoreManager object exists in this scene, but we can
-        // still read the static FinalScore through the class name
         finalScoreText.text = "Final Score: " + ScoreManager.FinalScore;
     }
 }

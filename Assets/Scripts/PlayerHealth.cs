@@ -27,7 +27,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         currentHealth = maxHealth;
@@ -38,7 +37,6 @@ public class PlayerHealth : MonoBehaviour
         CheckTrap(collision.gameObject);
     }
 
-    // Use this if your traps/player use "Is Trigger" colliders
     private void OnTriggerEnter(Collider other)
     {
         CheckTrap(other.gameObject);
@@ -46,7 +44,6 @@ public class PlayerHealth : MonoBehaviour
 
     void CheckTrap(GameObject hitObject)
     {
-        // Check if the object collided with redTrap
         if (hitObject.CompareTag("RedTrap"))
         {
             TakeDamage(1);
